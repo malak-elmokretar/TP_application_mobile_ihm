@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: "Accueil"),
             BottomNavigationBarItem(
               icon: Icon(Icons.face),
-              label: "PROFIL"),
+              label: "Profil"),
               BottomNavigationBarItem(
                 icon: Icon(Icons.stacked_bar_chart_sharp),
             label: "Statistiques"),
@@ -131,13 +131,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ListTile(
                     title: const Text('Profil'),
-                    onTap: () {},
+                    onTap: () {
+                      _itemClique(1);
+                    },
                     ),
                     ListTile(
                     title: const Text('Statistiques'),
                     selected: _selectedIndex == 2,
                     onTap: () {
-                      _itemClique(0);
+                      _itemClique(2);
                     },
                   )
                     ],
