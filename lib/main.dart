@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
+import 'nouvellepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -140,6 +141,25 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
                         ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Row(
+                            children: [
+                              const Icon(Icons.restaurant)
+                            ]
+                          ),
+                          Row(
+                            children: <Widget>[
+                              const Text("Nombre personnes")
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              const Text("4 à 6")
+                            ],
+                          ),
+                        ],
                       )
                     ],
                   )
@@ -147,135 +167,45 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ]
         ),
-        Image.asset("Assets/Images/pavlova.png")
+        Image.asset("Assets/Images/pavlova.png"),
+        Column(
+            children: <Widget>[
+              Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text("Écran n°1"),
+                ]
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text("Appuyer sur ce bouton pour passer à l'écran suivant"),
+                  ]
+              ),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton(onPressed: (){
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MySecondPage(title : (widget.title)))
+                    );
+                  },
+                  child: const Text("Suivant"),
+                  )
+                ]
+              ),
+            ]
+          )
+            ]
+          )
       ]
     )
-          // ]
         )
       );
-    // );
   }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              //       Text("Pavlova aux fraises", style: Theme.of(context).textTheme.headlineLarge),
-              //       ]
-              //   ),
-              //   Column(
-              //     children: <Widget>[
-              //       Text(
-              //         "La pavlova est un dessert à base de meringue qui doit son nom à la ballerine russe Anna Pavlova. La Pavlova se caractérise par une croûte croustillante et un intérieur moelleux et léger, garni de fruit et de crème fouettée",
-              //         style: Theme.of(context).textTheme.bodyMedium
-              //         ),
-              //         ]
-              //   ),
-              //   Column(
-              //     children: <Widget>[
-              //       Row (
-              //         children: [
-              //           Text("404 Notes", style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.right,)
-              //         ]
-              //       ),
-              //       Row(
-              //         children: [
-              //           Image.asset("Assets/images/star.png"),
-              //           Image.asset("Assets/images/star.png"),
-              //           Image.asset("Assets/images/star.png"),
-              //           Image.asset("Assets/images/star.png"),
-              //           Image.asset("Assets/images/star.png")
-              //         ],
-              //       )
-              //     ]
-              //   ),
-              //   Column(
-              //     children: <Widget>[
-              //       Row(
-              //       children: [
-              //         Column(
-              //           children: <Widget>[
-              //             const Icon(Icons.kitchen),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("Préparation"),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("25 minutes"),
-              //           ],
-              //         ),
-              //       ],
-              //       ),
-              //        Row(
-              //       children: <Widget>[
-              //         Column(
-              //           children: <Widget>[
-              //             const Icon(Icons.restaurant),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("Cuisson"),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("1 heure"),
-              //           ],
-              //         ),
-              //       ],
-              //       ),
-              //        Row(
-              //       children: <Widget>[
-              //         Column(
-              //           children: <Widget>[
-              //             const Icon(Icons.timer_sharp),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("Nombre de personnes"),
-              //           ],
-              //         ),
-              //          Column(
-              //           children: <Widget>[
-              //             Text("Entre 4 et 6"),
-              //           ],
-              //         ),
-              //       ],
-              //       ),
-              //     ]
-              //   ),
-              //     ],
-              // ),
-              // Column (
-              //   children: <Widget>[
-              //     Image.asset("Assets/Images/pavlova.png")
-              //   ],
-              // ),
-//           ],
-//         ),
-//       ),
-//       // floatingActionButton: FloatingActionButton(
-//       //   onPressed: _incrementCounter,
-//       //   tooltip: 'Increment',
-//       //   child: const Icon(Icons.add),
-//       // ), // This trailing comma makes auto-formatting nicer for build methods.
-//     );
-//   }
-// }
+}
