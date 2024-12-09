@@ -58,6 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
         case 1: {
           _affichage = "$_selectedIndex : Profil";
         }
+        case 2: {
+          _affichage = "$_selectedIndex : Statistiques";
+        }
         break;
       }
     });
@@ -100,7 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
             label: "Accueil"),
             BottomNavigationBarItem(
               icon: Icon(Icons.face),
-              label: "PROFIL")
+              label: "PROFIL"),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.stacked_bar_chart_sharp),
+            label: "Statistiques"),
               ],
               onTap: _itemClique,
               currentIndex: _selectedIndex,
@@ -127,6 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     title: const Text('Profil'),
                     onTap: () {},
                     ),
+                    ListTile(
+                    title: const Text('Statistiques'),
+                    selected: _selectedIndex == 2,
+                    onTap: () {
+                      _itemClique(0);
+                    },
+                  )
                     ],
                     ),
                     )
